@@ -92,10 +92,20 @@ class Home extends Controller
 
     public function personas_delete($id)
     {
-        $personaModel = new PersonaModel();
-        $personaModel->delete($id);
-        return $this->response->setJSON(['message' => 'Persona eliminada exitosamente']);
+        try {
+            $personaModel = new PersonaModel();
+            $deleted = $personaModel->delete($id);
+            
+            if ($deleted) {
+                return $this->response->setJSON(['message' => 'Persona eliminada exitosamente']);
+            } else {
+                return $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR)->setJSON(['message' => 'No se pudo eliminar la persona']);
+            }
+        } catch (\Exception $e) {
+            return $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR)->setJSON(['message' => 'Error al intentar eliminar la persona: ' . $e->getMessage()]);
+        }
     }
+    
 
     // CRUD para empleos
 
