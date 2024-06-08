@@ -912,3 +912,1417 @@ WARNING - 2024-06-08 09:31:25 --> [DEPRECATED] Creation of dynamic property App\
  4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 09:33:44 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(97): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 09:33:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: personas/20]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:44 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'20\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 09:33:46 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(97): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 09:33:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: personas/20]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:46 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'20\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 09:33:52 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(97): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 09:33:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: personas/20]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:33:52 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'20\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(97): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 09:37:51 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(98): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 09:37:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: personas/20]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(98): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:37:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(98): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:37:51 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'20\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'20\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(98): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->personas_delete('20')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:46:53 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/20]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:46:57 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:46:59 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:47:02 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:47:05 --> ParseError: Unmatched '}'
+[Method: GET, Route: /]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:47:06 --> ParseError: Unmatched '}'
+[Method: GET, Route: /]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:47:28 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:47:29 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 172.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:30 --> ParseError: Unmatched '}'
+[Method: DELETE, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:33 --> ParseError: Unmatched '}'
+[Method: DELETE, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:39 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:40 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:46 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:49 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:56:50 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos/19]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:57:09 --> ParseError: Unmatched '}'
+[Method: GET, Route: personas]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:57:23 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:57:25 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:57:26 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:57:48 --> ParseError: Unmatched '}'
+[Method: GET, Route: empleos]
+in APPPATH/Controllers/Home.php on line 179.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/students/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:58:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/BaseModel.php on line 1011.
+ 1 SYSTEMPATH/BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH/Controllers/Home.php(162): CodeIgniter\Model->update('19', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:58:41 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/BaseModel.php on line 1011.
+ 1 SYSTEMPATH/BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH/Controllers/Home.php(162): CodeIgniter\Model->update('19', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:58:42 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/BaseModel.php on line 1011.
+ 1 SYSTEMPATH/BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH/Controllers/Home.php(162): CodeIgniter\Model->update('19', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 09:58:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/BaseModel.php on line 1011.
+ 1 SYSTEMPATH/BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH/Model.php(854): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH/Controllers/Home.php(162): CodeIgniter\Model->update('19', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:05:31 --> mysqli_sql_exception: Unknown column 'id_persona' in 'where clause' in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(NULL, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:05:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 4 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:05:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 6 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:05:31 --> [Caused by] mysqli_sql_exception: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 7 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:05:32 --> mysqli_sql_exception: Unknown column 'id_persona' in 'where clause' in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(NULL, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:05:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 4 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:05:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 6 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:05:32 --> [Caused by] mysqli_sql_exception: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 7 APPPATH/Controllers/Home.php(159): CodeIgniter\BaseModel->delete()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:12:36 --> mysqli_sql_exception: Unknown column 'id_persona' in 'where clause' in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(NULL, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(187): CodeIgniter\BaseModel->delete()
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:12:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+[Method: DELETE, Route: empleos/19]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 4 APPPATH/Controllers/Home.php(187): CodeIgniter\BaseModel->delete()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:12:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 6 APPPATH/Controllers/Home.php(187): CodeIgniter\BaseModel->delete()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:12:36 --> [Caused by] mysqli_sql_exception: Unknown column 'id_persona' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id_persona` = \'19\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id_persona` = :id_persona:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete(null, false)
+ 7 APPPATH/Controllers/Home.php(187): CodeIgniter\BaseModel->delete()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->empleos_delete('19')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:36:49 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:36:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminar/2]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:49 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'2\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:36:52 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:36:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminar/2]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:52 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'2\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'2\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('2')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:36:57 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:36:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminar/8]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:57 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'8\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:36:58 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:36:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminar/8]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:36:58 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'8\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'8\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:40:30 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:40:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminarregistro/5]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:40:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:40:30 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'5\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:40:32 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(73): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:40:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminarregistro/5]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:40:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:40:32 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'5\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(73): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:42:25 --> Error: Call to undefined function App\Controllers\db()
+[Method: DELETE, Route: eliminarregistro/8]
+in APPPATH/Controllers/Home.php on line 66.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:42:26 --> Error: Call to undefined function App\Controllers\db()
+[Method: DELETE, Route: eliminarregistro/8]
+in APPPATH/Controllers/Home.php on line 66.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('8')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:42:35 --> Error: Call to undefined function App\Controllers\db()
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 66.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:42:36 --> Error: Call to undefined function App\Controllers\db()
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 66.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:43:49 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:44:13 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:44:47 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:45:29 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:45:30 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:45:33 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:45:42 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:45:51 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:47:17 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:47:18 --> ErrorException: Undefined property: App\Controllers\Home::$db
+[Method: DELETE, Route: eliminarregistro/5]
+in APPPATH/Controllers/Home.php on line 65.
+ 1 APPPATH/Controllers/Home.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$db', '/opt/lampp/htdocs/students/app/Controllers/Home.php', 65)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:48:37 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(64): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:48:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminarregistro/5]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:48:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:48:37 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'5\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 10:48:39 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`)) in /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php:308
+Stack trace:
+#0 /opt/lampp/htdocs/students/system/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `pe...', 0)
+#1 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `pe...')
+#2 /opt/lampp/htdocs/students/system/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `pe...')
+#3 /opt/lampp/htdocs/students/system/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `pe...', Array, false)
+#4 /opt/lampp/htdocs/students/system/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+#5 /opt/lampp/htdocs/students/system/BaseModel.php(1158): CodeIgniter\Model->doDelete(Array, false)
+#6 /opt/lampp/htdocs/students/app/Controllers/Home.php(64): CodeIgniter\BaseModel->delete(Array)
+#7 /opt/lampp/htdocs/students/system/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+#8 /opt/lampp/htdocs/students/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /opt/lampp/htdocs/students/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/students/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/students/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/students/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-08 10:48:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+[Method: DELETE, Route: eliminarregistro/5]
+in SYSTEMPATH/Database/BaseConnection.php on line 676.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 2 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 3 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 4 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:48:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 313.
+ 1 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 4 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 5 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 6 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 10:48:39 --> [Caused by] mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`db_data`.`empleos`, CONSTRAINT `empleos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 308.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(308): mysqli->query('DELETE FROM `personas`
+WHERE `id` IN (\'5\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `personas`
+WHERE `id` IN (\'5\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2823): CodeIgniter\Database\BaseConnection->query('DELETE FROM `personas`
+WHERE `id` IN :id:', [...], false)
+ 5 SYSTEMPATH/Model.php(510): CodeIgniter\Database\BaseBuilder->delete()
+ 6 SYSTEMPATH/BaseModel.php(1158): CodeIgniter\Model->doDelete([...], false)
+ 7 APPPATH/Controllers/Home.php(64): CodeIgniter\BaseModel->delete([...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->registro_delete('5')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

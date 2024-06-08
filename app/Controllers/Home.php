@@ -26,6 +26,7 @@ class Home extends Controller
         return $this->response->setJSON($resultado);
     }
 
+
     // Función para crear un nuevo registro de persona y empleo
     public function registro_create()
     {
@@ -52,10 +53,43 @@ class Home extends Controller
         return $this->response->setJSON(['message' => 'Registro creado exitosamente']);
     }
 
+    
+    // Función para eliminar un registro de persona y empleo
+    public function registro_delete($id)
+    {
+        $personaModel = new PersonaModel();
+
+        // Buscar la persona por ID
+        $persona = $personaModel->find($id);
+
+        // Verificar si la persona existe
+        if ($persona) {
+            // Crear una instancia del modelo de Empleo
+            $empleoModel = new EmpleoModel();
+
+            // Verificar si la persona tiene empleos asociados y eliminarlos
+            $empleos = $empleoModel->where('id_persona', $id)->findAll();
+            foreach ($empleos as $empleo) {
+                $empleoModel->delete($empleo['id']);
+            }
+
+            // Eliminar la persona
+            $personaModel->delete($id);
+
+            return $this->response->setJSON(['message' => 'Registro eliminado exitosamente']);
+        } else {
+            // Si la persona no se encuentra, devolver un mensaje de error
+            return $this->response->setJSON(['message' => 'Registro no encontrado'], 404);
+        }
+    }
+
+
+
 
 
     // CRUD para personas
 
+    // Función para obtener todas las personas
     public function personas_index()
     {
         $personaModel = new PersonaModel();
@@ -63,6 +97,7 @@ class Home extends Controller
         return $this->response->setJSON($personas);
     }
 
+    // Función para obtener una persona por su ID
     public function personas_show($id)
     {
         $personaModel = new PersonaModel();
@@ -74,14 +109,7 @@ class Home extends Controller
         }
     }
 
-    public function personas_create()
-    {
-        $personaModel = new PersonaModel();
-        $data = $this->request->getJSON();
-        $personaModel->insert($data);
-        return $this->response->setJSON(['message' => 'Persona creada exitosamente']);
-    }
-
+    // Función para actualizar una persona por su ID
     public function personas_update($id)
     {
         $personaModel = new PersonaModel();
@@ -90,24 +118,12 @@ class Home extends Controller
         return $this->response->setJSON(['message' => 'Persona actualizada exitosamente']);
     }
 
-    public function personas_delete($id)
-    {
-        try {
-            $personaModel = new PersonaModel();
-            $deleted = $personaModel->delete($id);
-            
-            if ($deleted) {
-                return $this->response->setJSON(['message' => 'Persona eliminada exitosamente']);
-            } else {
-                return $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR)->setJSON(['message' => 'No se pudo eliminar la persona']);
-            }
-        } catch (\Exception $e) {
-            return $this->response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR)->setJSON(['message' => 'Error al intentar eliminar la persona: ' . $e->getMessage()]);
-        }
-    }
-    
+
+ 
 
     // CRUD para empleos
+
+    // Función para obtener todos los empleos
 
     public function empleos_index()
     {
@@ -116,25 +132,21 @@ class Home extends Controller
         return $this->response->setJSON($empleos);
     }
 
+
+    // Función para obtener un empleo por su ID
     public function empleos_show($id)
     {
         $empleoModel = new EmpleoModel();
         $empleo = $empleoModel->find($id);
         if ($empleo) {
-            return $this->response->setJSON($empleo);
+        return $this->response->setJSON($empleo);
         } else {
-            return $this->response->setStatusCode(Response::HTTP_NOT_FOUND)->setJSON(['message' => 'Empleo no encontrado']);
+        return $this->response->setStatusCode(Response::HTTP_NOT_FOUND)->setJSON(['message' => 'Empleo no encontrado']);
         }
     }
 
-    public function empleos_create()
-    {
-        $empleoModel = new EmpleoModel();
-        $data = $this->request->getJSON();
-        $empleoModel->insert($data);
-        return $this->response->setJSON(['message' => 'Empleo creado exitosamente']);
-    }
 
+    // Función para actualizar un empleo por su ID
     public function empleos_update($id)
     {
         $empleoModel = new EmpleoModel();
@@ -142,8 +154,5 @@ class Home extends Controller
         $empleoModel->update($id, $data);
         return $this->response->setJSON(['message' => 'Empleo actualizado exitosamente']);
     }
-    
-
-
 
 }

@@ -23,5 +23,9 @@ $routes->delete('empleos/(:num)', 'Home::empleos_delete/$1');
 
 
 // Ruta para crear un nuevo registro de persona y empleo
-$routes->post('nuevoregistro', 'Home::registro_create');
+$routes->post('crear', 'Home::registro_create');
+
+$routes->delete('eliminar/(:num)', 'Home::registro_delete/$1');
+
+
 
